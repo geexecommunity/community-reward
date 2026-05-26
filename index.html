@@ -312,9 +312,14 @@
       background:linear-gradient(90deg,transparent,var(--gold),transparent);
     }
     .footer-logo {
-      font-family:'Cinzel Decorative',serif;
-      font-size: clamp(1.1rem,3vw,1.5rem);
-      color:var(--gold); margin-bottom:6px; letter-spacing:2px;
+      margin-bottom:10px;
+    }
+    .footer-logo img {
+      width: clamp(160px, 30vw, 260px);
+      mix-blend-mode: screen;
+      filter: brightness(1.1);
+      display: block;
+      margin: 0 auto;
     }
     .footer-text {
       color:var(--text-muted);
@@ -476,7 +481,9 @@
 <footer>
   <div class="ornament"></div>
   <br/>
-  <div class="footer-logo">Granado Espada</div>
+  <div class="footer-logo">
+    <img src="LOGO-Granado.png" alt="Granado Espada"/>
+  </div>
   <p class="footer-text">
     ติดตามกิจกรรมสนุกๆ และข่าวสารเพิ่มเติมของเกม<br/>
     <strong style="color:var(--gold-light)">Granado Espada</strong> ได้ที่ช่องทางด้านล่าง
