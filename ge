@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ประกาศผลรางวัล | Granado Espada</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --gold-light:  #f5d78e;
+      --gold:        #c9963a;
+      --gold-dark:   #8b6310;
+      --brown-deep:  #1a0e02;
+      --brown-dark:  #2a1a06;
+      --brown-mid:   #3d2608;
+      --brown-panel: #4a2e0a;
+      --brown-border:#6b420f;
+      --cream:       #fdf0d0;
+      --text-light:  #f5e6c0;
+      --text-muted:  #c4a45a;
+      --shadow-gold: rgba(201,150,58,0.4);
+
+      /* font scale — increase these one level to boost all text */
+      --fs-xs:   0.82rem;
+      --fs-sm:   0.92rem;
+      --fs-base: 1rem;
+      --fs-md:   1.08rem;
+      --fs-lg:   1.25rem;
+      --fs-xl:   1.5rem;
+    }
+
+    /* ─── RESET ─── */
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    html { font-size: 16px; }         /* base — everything else scales from here */
+
+    body {
+      font-family: 'Sarabun', sans-serif;
+      font-size: var(--fs-base);
+      line-height: 1.65;
+      background-color: var(--brown-deep);
+      background-image:
+        radial-gradient(ellipse at 50% 0%, rgba(139,99,16,.22) 0%, transparent 55%),
+        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23c9963a' fill-opacity='0.04'%3E%3Cpath d='M40 0L80 40L40 80L0 40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      color: var(--text-light);
+      min-height: 100vh;
+    }
+
+    /* ─── ORNAMENT ─── */
+    .ornament {
+      text-align:center; color:var(--gold); letter-spacing:6px;
+      opacity:.75; margin:8px 0;
+    }
+    .ornament::before { content:'——— ✦ ———'; }
+
+    /* ─── HEADER ─── */
+    header {
+      position:relative; text-align:center;
+      padding: clamp(36px, 6vw, 64px) 20px clamp(32px, 5vw, 52px);
+      background:
+        linear-gradient(180deg,rgba(26,14,2,0) 0%,rgba(26,14,2,.7) 100%),
+        linear-gradient(135deg,#2a1a06 0%,#3d2608 40%,#2a1a06 100%);
+      border-bottom: 2px solid var(--brown-border);
+      overflow:hidden;
+    }
+    header::before, header::after {
+      content:''; position:absolute; left:0; right:0; height:3px;
+      background:linear-gradient(90deg,transparent,var(--gold),var(--gold-light),var(--gold),transparent);
+    }
+    header::before{top:0;} header::after{bottom:0;}
+
+    /* corner deco — hidden on tiny screens */
+    .corner-deco { position:absolute; width:72px; height:72px; opacity:.22; }
+    .corner-deco.tl{top:10px;left:10px;}
+    .corner-deco.tr{top:10px;right:10px;transform:scaleX(-1);}
+    .corner-deco.bl{bottom:10px;left:10px;transform:scaleY(-1);}
+    .corner-deco.br{bottom:10px;right:10px;transform:scale(-1,-1);}
+    @media(max-width:480px){ .corner-deco{width:44px;height:44px;opacity:.15;} }
+
+    .header-badge {
+      display:inline-block;
+      background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-dark));
+      color:var(--brown-deep);
+      font-family:'Cinzel',serif; font-weight:700;
+      font-size: clamp(.65rem,.9vw+.5rem,.78rem);
+      letter-spacing:3px; text-transform:uppercase;
+      padding:6px 22px; border-radius:2px; margin-bottom:16px;
+    }
+    .header-crest {
+      font-size: clamp(2.8rem, 6vw, 4rem);
+      line-height:1; margin-bottom:12px;
+      filter:drop-shadow(0 0 20px rgba(201,150,58,.7));
+    }
+    .header-title-main {
+      font-family:'Cinzel Decorative',serif; font-weight:700;
+      font-size: clamp(1.45rem, 4.5vw, 2.7rem);
+      color:var(--gold-light);
+      text-shadow:0 0 28px var(--shadow-gold), 0 2px 4px #000;
+      letter-spacing:1.5px; line-height:1.25; margin-bottom:10px;
+    }
+    .header-title-sub {
+      font-family:'Cinzel',serif;
+      font-size: clamp(.9rem, 2vw, 1.2rem);
+      color:var(--gold); letter-spacing:3px; margin-bottom:18px;
+    }
+    .header-desc {
+      font-size: clamp(.95rem, 1.5vw, 1.08rem);
+      color:var(--text-muted); max-width:600px; margin:0 auto; line-height:1.8;
+    }
+
+    /* ─── CONTAINER ─── */
+    .container {
+      max-width:1200px; margin:0 auto;
+      padding: 0 clamp(12px, 3vw, 24px) 60px;
+    }
+
+    /* ─── TABS ─── */
+    .tabs-wrapper { margin-top:36px; }
+    .tabs-label {
+      font-family:'Cinzel',serif; font-size:.78rem; letter-spacing:4px;
+      color:var(--text-muted); text-align:center; margin-bottom:14px;
+      text-transform:uppercase;
+    }
+    .tabs { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:0; }
+    .tab-btn {
+      font-family:'Sarabun',sans-serif;
+      font-size: clamp(.95rem, 1.4vw, 1.05rem);
+      font-weight:600;
+      letter-spacing:.5px; padding:14px 28px; cursor:pointer;
+      border:1px solid var(--brown-border); background:var(--brown-dark);
+      color:var(--text-muted); border-radius:6px 6px 0 0;
+      transition:all .22s; position:relative; bottom:-1px;
+      text-align:center; line-height:1.45;
+    }
+    .tab-btn:hover  { color:var(--gold-light); background:var(--brown-mid); border-color:var(--gold-dark); }
+    .tab-btn.active {
+      background:linear-gradient(180deg,var(--brown-panel) 0%,var(--brown-mid) 100%);
+      color:var(--gold-light); border-color:var(--gold); border-bottom-color:var(--brown-panel);
+      box-shadow:0 -4px 14px rgba(201,150,58,.25);
+    }
+    .tab-btn .tab-name {
+      display:block;
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color:inherit;
+    }
+    .tab-btn .tab-date {
+      display:block;
+      font-size: clamp(.78rem, 1vw, .88rem);
+      color:var(--text-muted);
+      font-weight:400;
+      margin-top:3px;
+      letter-spacing:.5px;
+    }
+    .tab-btn.active .tab-date { color:var(--gold); }
+    .tab-btn .tab-num {
+      display:inline-block; background:var(--gold-dark); color:var(--cream);
+      font-size:.72rem; padding:2px 9px; border-radius:10px;
+      margin-top:6px; vertical-align:middle;
+    }
+
+    /* ─── PANEL ─── */
+    .tab-panel {
+      display:none;
+      background:linear-gradient(180deg,var(--brown-panel) 0%,var(--brown-mid) 100%);
+      border:1px solid var(--gold-dark); border-radius:0 8px 8px 8px;
+      padding: clamp(16px,3vw,28px) clamp(12px,3vw,24px);
+      box-shadow:0 8px 40px rgba(0,0,0,.55), inset 0 1px 0 rgba(201,150,58,.18);
+    }
+    .tab-panel.active { display:block; }
+
+    .panel-header {
+      display:flex; align-items:center; justify-content:space-between;
+      flex-wrap:wrap; gap:10px; margin-bottom:18px;
+    }
+    .panel-title {
+      font-family:'Cinzel',serif;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color:var(--gold-light); letter-spacing:1.5px;
+    }
+    .panel-meta { display:flex; gap:10px; flex-wrap:wrap; }
+    .meta-chip {
+      font-size: clamp(.72rem,.9vw,.8rem); padding:4px 14px; border-radius:20px;
+      font-family:'Cinzel',serif; letter-spacing:1px;
+    }
+    .meta-chip.week { background:rgba(139,99,16,.4); border:1px solid var(--gold-dark); color:var(--gold-light); }
+    .meta-chip.count{ background:rgba(139,26,26,.3); border:1px solid #8b1a1a; color:#f0a0a0; }
+
+    /* ─── STATS ─── */
+    .stats-bar {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+      gap:12px; margin-bottom:20px;
+    }
+    .stat-card {
+      background:rgba(26,14,2,.55); border:1px solid var(--brown-border);
+      border-radius:6px; padding:14px 12px; text-align:center;
+    }
+    .stat-num {
+      font-family:'Cinzel',serif;
+      font-size: clamp(1.5rem, 3vw, 1.9rem);
+      color:var(--gold); line-height:1; margin-bottom:4px;
+    }
+    .stat-label { font-size: clamp(.72rem,.9vw,.8rem); color:var(--text-muted); letter-spacing:.5px; }
+
+    /* ─── SEARCH ─── */
+    .search-row { display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap; }
+    .search-input {
+      flex:1; min-width:180px;
+      background:rgba(26,14,2,.65); border:1px solid var(--brown-border);
+      color:var(--text-light); font-family:'Sarabun',sans-serif;
+      font-size: clamp(.9rem,1.3vw,1rem);
+      padding:10px 16px; border-radius:4px; outline:none; transition:border-color .2s;
+    }
+    .search-input:focus { border-color:var(--gold); }
+    .search-input::placeholder { color:var(--text-muted); opacity:.6; }
+    .filter-select {
+      background:rgba(26,14,2,.65); border:1px solid var(--brown-border);
+      color:var(--text-light); font-family:'Sarabun',sans-serif;
+      font-size: clamp(.9rem,1.3vw,1rem);
+      padding:10px 14px; border-radius:4px; outline:none; cursor:pointer;
+    }
+    .filter-select:focus { border-color:var(--gold); }
+    .filter-select option { background:#2a1a06; }
+
+    /* ─── TABLE ─── */
+    .table-wrap {
+      overflow-x:auto; border-radius:6px;
+      border:1px solid var(--brown-border);
+      -webkit-overflow-scrolling:touch;       /* smooth scroll on iOS */
+    }
+    table { width:100%; border-collapse:collapse; }
+
+    /* mobile: min-width so content stays readable on narrow screens */
+    @media(max-width:700px){ table{ min-width:560px; } }
+
+    thead tr {
+      background:linear-gradient(90deg,var(--brown-deep),var(--brown-dark),var(--brown-deep));
+    }
+    thead th {
+      font-family:'Cinzel',serif;
+      font-size: clamp(.72rem,1vw,.8rem);
+      letter-spacing:1.5px; color:var(--gold);
+      padding:14px 13px; text-align:left;
+      border-bottom:2px solid var(--gold-dark);
+      white-space:nowrap; cursor:pointer; user-select:none;
+    }
+    thead th::after  { content:' ⇅'; opacity:.3; font-size:.62rem; }
+    thead th.sorted-asc::after  { content:' ▲'; opacity:1; }
+    thead th.sorted-desc::after { content:' ▼'; opacity:1; }
+    thead th:hover { color:var(--gold-light); }
+
+    tbody tr { border-bottom:1px solid rgba(107,66,15,.35); transition:background .15s; }
+    tbody tr:hover          { background:rgba(201,150,58,.08); }
+    tbody tr:nth-child(even){ background:rgba(26,14,2,.3); }
+    tbody tr:nth-child(even):hover{ background:rgba(201,150,58,.11); }
+
+    td {
+      padding:12px 13px; vertical-align:middle;
+      color:var(--text-light);
+      font-size: clamp(.88rem, 1.1vw, .97rem);
+    }
+    td.no-col {
+      font-family:'Cinzel',serif; font-size:.82rem;
+      color:var(--gold-dark); text-align:center; width:42px;
+    }
+    td.reward-col { color:var(--gold-light); font-weight:600; white-space:nowrap; }
+    td.fb-col     { min-width:170px; }
+    td.exe-col    { font-family:monospace; font-size:.78rem; color:var(--text-muted); letter-spacing:.4px; }
+    td.id-col     { font-family:monospace; font-size:.9rem; color:#a8d8d8; }
+    td.server-col { text-align:center; }
+
+    .server-tag {
+      display:inline-block; padding:4px 13px; border-radius:12px;
+      font-size:.75rem; font-family:'Cinzel',serif; letter-spacing:1px; font-weight:600;
+    }
+    .server-tag.leonardo { background:rgba(90,50,140,.35); border:1px solid #7a5aaa; color:#d0b8f0; }
+    .server-tag.season   { background:rgba(20,80,60,.35);  border:1px solid #2a9a70; color:#80f0c0; }
+
+    .status-tag {
+      display:inline-flex; align-items:center; gap:6px;
+      padding:5px 13px; border-radius:12px; font-size:.8rem;
+      background:rgba(30,100,50,.3); border:1px solid #2a8a50; color:#7eeea8;
+      white-space:nowrap; font-weight:600;
+    }
+    .status-dot {
+      width:7px; height:7px; border-radius:50%; background:#4edf88;
+      flex-shrink:0;
+    }
+
+    .no-results {
+      text-align:center; padding:40px;
+      color:var(--text-muted); font-size:var(--fs-md); font-style:italic;
+    }
+
+    /* ─── SCROLL HINT (mobile) ─── */
+    .scroll-hint {
+      display:none;
+      font-size:.78rem; color:var(--text-muted); text-align:center;
+      margin-bottom:8px; letter-spacing:.5px;
+    }
+    @media(max-width:700px){ .scroll-hint{ display:block; } }
+
+    /* ─── FOOTER ─── */
+    footer {
+      position:relative; text-align:center;
+      padding: clamp(36px,5vw,56px) 20px clamp(32px,4vw,44px);
+      background:linear-gradient(180deg,var(--brown-dark) 0%,var(--brown-deep) 100%);
+      border-top:2px solid var(--brown-border);
+    }
+    footer::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background:linear-gradient(90deg,transparent,var(--gold),transparent);
+    }
+    .footer-logo {
+      font-family:'Cinzel Decorative',serif;
+      font-size: clamp(1.1rem,3vw,1.5rem);
+      color:var(--gold); margin-bottom:6px; letter-spacing:2px;
+    }
+    .footer-text {
+      color:var(--text-muted);
+      font-size: clamp(.95rem,1.5vw,1.05rem);
+      line-height:1.85; margin-bottom:24px;
+      max-width:560px; margin-left:auto; margin-right:auto;
+    }
+    .footer-cta {
+      display:inline-flex; align-items:center; gap:10px;
+      padding: clamp(11px,2vw,14px) clamp(22px,4vw,34px);
+      background:linear-gradient(135deg,#1877f2 0%,#0d5dc7 100%);
+      color:#fff; font-family:'Cinzel',serif;
+      font-size: clamp(.85rem,1.3vw,.95rem);
+      letter-spacing:1.5px; text-decoration:none; border-radius:6px;
+      border:1px solid rgba(255,255,255,.2);
+      box-shadow:0 4px 20px rgba(24,119,242,.4);
+      transition:all .25s; cursor:pointer;
+    }
+    .footer-cta:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(24,119,242,.6); }
+    .footer-cta svg { width:20px; height:20px; fill:#fff; flex-shrink:0; }
+    .footer-copy {
+      margin-top:30px; font-size:.72rem;
+      color:rgba(196,164,90,.35); letter-spacing:2px;
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar{width:5px;height:5px;}
+    ::-webkit-scrollbar-track{background:var(--brown-dark);}
+    ::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:3px;}
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header>
+  <svg class="corner-deco tl" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 4 L4 40 Q4 4 40 4 Z" stroke="#c9963a" stroke-width="1.5" fill="none"/>
+    <path d="M4 4 L30 4 M4 4 L4 30" stroke="#c9963a" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="4" cy="4" r="3" fill="#c9963a"/>
+    <path d="M16 4 Q4 4 4 16" stroke="#c9963a" stroke-width="1" fill="none" opacity="0.5"/>
+    <path d="M28 4 Q4 4 4 28" stroke="#c9963a" stroke-width="1" fill="none" opacity="0.3"/>
+  </svg>
+  <svg class="corner-deco tr" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 4 L4 40 Q4 4 40 4 Z" stroke="#c9963a" stroke-width="1.5" fill="none"/>
+    <path d="M4 4 L30 4 M4 4 L4 30" stroke="#c9963a" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="4" cy="4" r="3" fill="#c9963a"/>
+    <path d="M16 4 Q4 4 4 16" stroke="#c9963a" stroke-width="1" fill="none" opacity="0.5"/>
+    <path d="M28 4 Q4 4 4 28" stroke="#c9963a" stroke-width="1" fill="none" opacity="0.3"/>
+  </svg>
+  <svg class="corner-deco bl" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 4 L4 40 Q4 4 40 4 Z" stroke="#c9963a" stroke-width="1.5" fill="none"/>
+    <path d="M4 4 L30 4 M4 4 L4 30" stroke="#c9963a" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="4" cy="4" r="3" fill="#c9963a"/>
+    <path d="M16 4 Q4 4 4 16" stroke="#c9963a" stroke-width="1" fill="none" opacity="0.5"/>
+    <path d="M28 4 Q4 4 4 28" stroke="#c9963a" stroke-width="1" fill="none" opacity="0.3"/>
+  </svg>
+  <svg class="corner-deco br" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 4 L4 40 Q4 4 40 4 Z" stroke="#c9963a" stroke-width="1.5" fill="none"/>
+    <path d="M4 4 L30 4 M4 4 L4 30" stroke="#c9963a" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="4" cy="4" r="3" fill="#c9963a"/>
+    <path d="M16 4 Q4 4 4 16" stroke="#c9963a" stroke-width="1" fill="none" opacity="0.5"/>
+    <path d="M28 4 Q4 4 4 28" stroke="#c9963a" stroke-width="1" fill="none" opacity="0.3"/>
+  </svg>
+
+  <div class="header-badge">✦ Community Event ✦</div>
+  <div class="header-crest">⚜️</div>
+  <h1 class="header-title-main">ประกาศผลรางวัล<br/>กิจกรรมคอมมูนิตี้</h1>
+  <p class="header-title-sub">Granado Espada &nbsp;·&nbsp; Winner Announcement</p>
+  <div class="ornament"></div>
+  <br/>
+  <p class="header-desc">
+    ขอบคุณทุกท่านที่มาร่วมเล่นสนุกกับเรา<br/>
+    ขอแสดงความยินดีกับผู้โชคดีทุกท่านที่ได้รับรางวัล 🎉
+  </p>
+</header>
+
+<!-- ═══════════════ MAIN ═══════════════ -->
+<div class="container">
+  <div class="tabs-wrapper">
+    <p class="tabs-label">— เลือกกิจกรรม —</p>
+
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" onclick="switchTab('week5',this)" role="tab">
+        <span class="tab-name">🏆 ถูกใจอัปเดตไหนสุดใน GE เดือนนี้?</span>
+        <span class="tab-date">📅 18 พ.ค. 2026 – 22 พ.ค. 2026</span>
+        <span class="tab-num">46 รางวัล</span>
+      </button>
+    </div>
+
+    <!-- PANEL -->
+    <div class="tab-panel active" id="panel-week5">
+
+      <div class="panel-header">
+        <div class="panel-title">🎖️ Winner List &nbsp;|&nbsp; รายชื่อผู้ชนะ</div>
+        <div class="panel-meta">
+          <span class="meta-chip week">Week 5</span>
+          <span class="meta-chip count" id="countChip">46 ผู้โชคดี</span>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-bar">
+        <div class="stat-card">
+          <div class="stat-num" id="stat-total">46</div>
+          <div class="stat-label">ผู้รับรางวัล</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="stat-leo">18</div>
+          <div class="stat-label">Server Leonardo</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="stat-sea">28</div>
+          <div class="stat-label">Server Season</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" style="font-size:1rem;padding-top:6px;line-height:1.4;">กำลัง<br/>จัดส่ง</div>
+          <div class="stat-label">สถานะรางวัล</div>
+        </div>
+      </div>
+
+      <!-- Search -->
+      <div class="search-row">
+        <input class="search-input" type="text" id="searchInput"
+               placeholder="🔍  ค้นหาชื่อ Facebook / EXE ID / Server…"
+               oninput="filterTable()"/>
+        <select class="filter-select" id="serverFilter" onchange="filterTable()">
+          <option value="">ทุก Server</option>
+          <option value="Leonardo">Leonardo</option>
+          <option value="Season">Season</option>
+        </select>
+      </div>
+
+      <!-- Scroll hint (mobile only) -->
+      <p class="scroll-hint">👈 เลื่อนซ้าย-ขวาเพื่อดูข้อมูลเพิ่มเติม 👉</p>
+
+      <!-- Table -->
+      <div class="table-wrap">
+        <table id="winnerTable">
+          <thead>
+            <tr>
+              <th onclick="sortTable(0)">#</th>
+              <th onclick="sortTable(1)">รางวัล</th>
+              <th onclick="sortTable(2)">Facebook</th>
+              <th onclick="sortTable(3)">EXE ID (Code)</th>
+              <th onclick="sortTable(4)">Server</th>
+              <th>สถานะ</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+        <div class="no-results" id="noResults" style="display:none;">ไม่พบรายชื่อที่ค้นหา 🔍</div>
+      </div>
+
+    </div><!-- /tab-panel -->
+  </div><!-- /tabs-wrapper -->
+</div><!-- /container -->
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="ornament"></div>
+  <br/>
+  <div class="footer-logo">Granado Espada</div>
+  <p class="footer-text">
+    ติดตามกิจกรรมสนุกๆ และข่าวสารเพิ่มเติมของเกม<br/>
+    <strong style="color:var(--gold-light)">Granado Espada</strong> ได้ที่ช่องทางด้านล่าง
+  </p>
+  <a class="footer-cta" href="https://www.facebook.com/GranadoEspadaExtreme" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+    </svg>
+    Facebook Granado Espada Extreme
+  </a>
+  <p class="footer-copy">© Granado Espada Extreme &nbsp;·&nbsp; Community Event &nbsp;·&nbsp; All Rights Reserved</p>
+</footer>
+
+<script>
+  /* ─── DATA ─── */
+  const winners = [
+    {no:1,  reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Vitsarut Prajongjut',                      exe:'FFIFETY7KVBCKG9XZVZEW0Y34', id:'memmom47',        server:'Leonardo'},
+    {no:2,  reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Nantawat Chinjung Klaising',                exe:'SNERWYIKK4IUER1EY7LDKFJVI', id:'hotboybrand',     server:'Leonardo'},
+    {no:3,  reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'ตุ๊ต๊ะ ต๋อมแต๋ม',                         exe:'TZDNOFTCFMIK1WPHE91DLOWQ9', id:'emututa',          server:'Leonardo'},
+    {no:4,  reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'ผู้ชายธรรมดา กับหมาหน้าดำ',                exe:'YFL5MW8AHM0WIMORSIBAYJWV5', id:'inthelight02',     server:'Leonardo'},
+    {no:5,  reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Kritkhanet Krisht Jit',                    exe:'WRFDKGD7NWMFQSC3HMPV9ZKCQ', id:'artty29011',       server:'Leonardo'},
+    {no:6,  reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Chan Chan',                                exe:'B0B922PVLW1QZHUWHQ8YJYHRF', id:'chanrong',         server:'Leonardo'},
+    {no:7,  reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Lee Fafa',                                 exe:'HM8ZMHDURBCLYM5KXD6REXGHC', id:'bankexe2',         server:'Leonardo'},
+    {no:8,  reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'อย่าเยอะ พี่ไม่ชอบ',                      exe:'2JGCRZ5K0ALBEGYKG7PA0Y46Z', id:'marines262508',    server:'Leonardo'},
+    {no:9,  reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Ris Tangitwiboonkun',                      exe:'MYZQUW2FXEEAUJWQMHU2QM1NS', id:'ashtanosg',        server:'Leonardo'},
+    {no:10, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Fiat Thunwa Sagittarius',                  exe:'I5XXMMSIQQ47N7WNUBD26XWUH', id:'ThunwaFirce',      server:'Leonardo'},
+    {no:11, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Kittiphat Isuriyakornthep',                exe:'VJ9IKC518LPUGBBZNZ4MCB4QF', id:'phatonline1980',   server:'Leonardo'},
+    {no:12, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'นีโอ ลิซาร์ด',                            exe:'NMAMQKCPXSBYIEFUYTHLUVMNO', id:'neolizard',        server:'Leonardo'},
+    {no:13, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'โจ โจ้',                                  exe:'Z9ICXA1P0UPDJG6VP0B3LXOXP', id:'Jo1990abc',        server:'Leonardo'},
+    {no:14, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'นายกอ นามสมมุติ',                         exe:'LXMEXVQM7J0HMGKALDATO63M4', id:'peethai2022',      server:'Leonardo'},
+    {no:15, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Andriana Gardae',                          exe:'MA37LW6QVWOV5DTEOXQDHAPK9', id:'shakiya69',        server:'Leonardo'},
+    {no:16, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Sha Tar',                                 exe:'3X1SUXW34QCDYS3MOS2MNUTIO', id:'aidedecamp',       server:'Leonardo'},
+    {no:17, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Billy Gaming',                             exe:'CF5KQFQD0N9DQ0LKG7WOG7MFK', id:'BillCardioid',     server:'Leonardo'},
+    {no:18, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'GoneWith TheWind',                        exe:'QGKDNJYBCKYRDPBP4UCU1VFU9', id:'hanato00',         server:'Leonardo'},
+    {no:19, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Puwadon Sungkawitoon',                     exe:'4WGR9QLWGDCXZTVCU6QDWT3UC', id:'mindmina',         server:'Season'},
+    {no:20, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Kawi Thm',                                 exe:'FNH0TC9DZZXJLEKDHPBIX5NMJ', id:'kawichet1983',     server:'Season'},
+    {no:21, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'ปาน พิพัฒกุล',                            exe:'LQEYUAQJBNWVEGO0CDAIZXWO5', id:'panza4',           server:'Season'},
+    {no:22, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'MrSuntara Saysang',                        exe:'ESMVXXCIASOUA5NBHAAJFHJ05', id:'Suntara300',       server:'Season'},
+    {no:23, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'อยู่คนเดียวให้ชิน ไม่ต้องอินกับอะไร',     exe:'Q8DE65PUGMSPJK7DFJ9TLWFCS', id:'sleep626g',        server:'Season'},
+    {no:24, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Tatpong Pintumakin',                       exe:'7LO0VGRNAKCD6VA8T7GGTTJDA', id:'guyzaja963',       server:'Season'},
+    {no:25, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'ออเอี้ยง เลี้ยงฟายเฒ่า',                  exe:'J2M5JH0ZYSVYQ5YUEYQCU2ZZW', id:'psibuster10',      server:'Season'},
+    {no:26, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'ศูนย์ศูนย์เจ็ด วิทวัส',                   exe:'QFF0GUGCBW4X9FJJUTOQPPEHU',  id:'eklonggo0025',     server:'Season'},
+    {no:27, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Korachai Kengkarn',                        exe:'LQCF4EHBFOWVSJXCR8J3LQIUQ', id:'pongif01',         server:'Season'},
+    {no:28, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Thanapat Ekkapong',                        exe:'2GQ1WIOLDJ7UFMOPKIL58AF7H', id:'folkaizGE',        server:'Season'},
+    {no:29, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'ต้นไม้ และ ตึก',                          exe:'XYIZYA3IDC6QNL35V6KP9VABF', id:'eklonggo0023',     server:'Season'},
+    {no:30, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Sitthiphun Makmit',                        exe:'KMOXNVDAKFIFV2FZ4GAVIQIMI', id:'sitthi007',        server:'Season'},
+    {no:31, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Sai Jang Saizo',                           exe:'XHNH3V8RGBWSU8DY4QU7A666C', id:'xgaipaix',         server:'Season'},
+    {no:32, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Hell Heaven',                              exe:'H4N07YWX0SPSPFBXLSUHZVSVP', id:'spiderx21',        server:'Season'},
+    {no:33, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'กินข้าวให้อร่อย',                         exe:'GLC5NRI4Z3CCTFMBNDPNIKJYP', id:'haloheng2',        server:'Season'},
+    {no:34, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'รับซ่อมคอมพิวเตอร์ โน๊ตบุ๊ค ปริ้นเตอร์',  exe:'0F0RK41ONZYSV1JVXWFCR8PLM', id:'jakapong006',      server:'Season'},
+    {no:35, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Bas L. Chaemkul',                          exe:'TGWTM11M0HPFGSGPNT9PKRU2O', id:'baslightyear',     server:'Season'},
+    {no:36, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Aioriaz Riamjaiyen',                       exe:'2XJZXNHASGIVESH7WH0ZNJKLT', id:'spiderx20',        server:'Season'},
+    {no:37, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Thananthaset Buranakunrat',                 exe:'FDRW6EMXTUYJHTSOBKVVIGQ7C', id:'olalabu01',        server:'Season'},
+    {no:38, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Tor Tanawat',                               exe:'NJMAVLQQK9QD2WONA6OB0BDC1', id:'sanakun1101',      server:'Season'},
+    {no:39, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Wongsatorn Banterng',                      exe:'ZUGALRTOJJ8QUMH7YT7NFZF2B', id:'petchoicez69',     server:'Season'},
+    {no:40, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Nuttawut Asavanichakorn',                   exe:'U2PR05C9IMONZ48DRXS2I2Z8G', id:'haloheng3',        server:'Season'},
+    {no:41, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'กระบี่ซิ่ง ควงดังฟังชัด',                 exe:'LHFUHWUJIZAZKQTX75EH3AO3D', id:'chiapgame01',      server:'Season'},
+    {no:42, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Naaphat K. Duangjai',                      exe:'IMYBTGPVYVMVHLMCRTZJDIVL9', id:'triumph2538',      server:'Season'},
+    {no:43, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Thunji Suay',                              exe:'L1IZXAL5EXQ2E5WFGBNNU4ROY', id:'Babiestj',         server:'Season'},
+    {no:44, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'MMax Kittipan Mahakijkampol',              exe:'WK3NLNJCHNNMLIQVXQOW1DWXL', id:'Redtotoro404',     server:'Season'},
+    {no:45, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Anucha Srisinlapasart',                    exe:'P7I40U6LZPLK6NZN76YG4VSLE', id:'nongaim20',        server:'Season'},
+    {no:46, reward:'รางวัลให้กับทุกคนที่เข้าร่วม', fb:'Pongsatorn Sapkaew',                       exe:'JOXMGPXOJRNPBZ76JTIQTIGDX', id:'sad1964',          server:'Season'},
+  ];
+
+  let sortCol = -1, sortDir = 1;
+
+  function renderTable(data) {
+    const tbody = document.getElementById('tableBody');
+    const noRes = document.getElementById('noResults');
+    if (data.length === 0) { tbody.innerHTML = ''; noRes.style.display = 'block'; return; }
+    noRes.style.display = 'none';
+    tbody.innerHTML = data.map(w => `
+      <tr>
+        <td class="no-col">${w.no}</td>
+        <td class="reward-col">🎁 ${w.reward}</td>
+        <td class="fb-col">${w.fb}</td>
+        <td class="exe-col">${w.exe}</td>
+        <td class="server-col">
+          <span class="server-tag ${w.server.toLowerCase()}">${w.server}</span>
+        </td>
+        <td><span class="status-tag"><span class="status-dot"></span>จัดส่งแล้ว ✓</span></td>
+      </tr>
+    `).join('');
+  }
+
+  function updateStats(data) {
+    const leo = data.filter(w => w.server === 'Leonardo').length;
+    const sea = data.filter(w => w.server === 'Season').length;
+    document.getElementById('stat-total').textContent = data.length;
+    document.getElementById('stat-leo').textContent   = leo;
+    document.getElementById('stat-sea').textContent   = sea;
+    document.getElementById('countChip').textContent  = data.length + ' ผู้โชคดี';
+  }
+
+  function getFiltered() {
+    const q  = document.getElementById('searchInput').value.toLowerCase();
+    const sv = document.getElementById('serverFilter').value;
+    return winners.filter(w =>
+      (!sv || w.server === sv) &&
+      (!q  || w.fb.toLowerCase().includes(q) ||
+              w.exe.toLowerCase().includes(q) ||
+              w.server.toLowerCase().includes(q))
+    );
+  }
+
+  function filterTable() {
+    const data = getFiltered();
+    if (sortCol >= 0) {
+      const key  = COL_KEYS[sortCol];
+      data.sort((a,b) => {
+        const av = typeof a[key]==='number' ? a[key] : a[key].toLowerCase();
+        const bv = typeof b[key]==='number' ? b[key] : b[key].toLowerCase();
+        return av < bv ? -sortDir : av > bv ? sortDir : 0;
+      });
+    }
+    renderTable(data);
+    updateStats(data);
+  }
+
+  function sortTable(col) {
+    if (sortCol === col) sortDir *= -1; else { sortCol = col; sortDir = 1; }
+    document.querySelectorAll('#winnerTable thead th').forEach((th, i) => {
+      th.classList.remove('sorted-asc','sorted-desc');
+      if (i === col) th.classList.add(sortDir===1 ? 'sorted-asc' : 'sorted-desc');
+    });
+    filterTable();
+  }
+
+  // map visible col index → data key (col 4 = server, no id col)
+  const COL_KEYS = ['no','reward','fb','exe','server'];
+
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + id).classList.add('active');
+  }
+
+  // init
+  renderTable(winners);
+</script>
+</body>
+</html>
