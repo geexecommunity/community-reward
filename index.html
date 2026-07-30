@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ประกาศผลรางวัล "สิงห์สนามจริงมาแล้ว!" | Granado Espada</title>
+  <title>ประกาศผลรางวัล เตะบอลสะท้านโลก | Granado Espada</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -359,7 +359,7 @@
   </svg>
   <div class="header-badge">✦ Community Event ✦</div>
   <div class="header-crest">⚜️</div>
-  <h1 class="header-title-main">ประกาศผลรางวัล<br/>"สิงห์สนามจริงมาแล้ว!"</h1>
+  <h1 class="header-title-main">ประกาศผลรางวัล<br/>"เตะบอลสะท้านโลก"</h1>
   <p class="header-title-sub">Granado Espada &nbsp;·&nbsp; Winner Announcement</p>
   <div class="ornament"></div>
   <br/>
@@ -378,9 +378,9 @@
     <p class="tabs-label">— เลือกกิจกรรม —</p>
     <div class="tabs" role="tablist">
       <button class="tab-btn active" onclick="switchTab('week1',this)" role="tab">
-        <span class="tab-name">🏆 สิงห์สนามจริงมาแล้ว!</span>
-        <span class="tab-date">📅 13 ก.ค. 2026 – 17 ก.ค. 2026</span>
-        <span class="tab-num">27 รางวัล</span>
+        <span class="tab-name">🏆 เตะบอลสะท้านโลก</span>
+        <span class="tab-date">📅 20 ก.ค. 2026 – 24 ก.ค. 2026</span>
+        <span class="tab-num">41 รางวัล</span>
       </button>
     </div>
 
@@ -389,8 +389,8 @@
       <div class="panel-header">
         <div class="panel-title">🎖️ Winner List &nbsp;|&nbsp; รายชื่อผู้ชนะ</div>
         <div class="panel-meta">
-          <span class="meta-chip week">Week 4</span>
-          <span class="meta-chip count" id="countChip">27 ผู้โชคดี</span>
+          <span class="meta-chip week">Week 5</span>
+          <span class="meta-chip count" id="countChip">41 ผู้โชคดี</span>
         </div>
       </div>
 
@@ -401,14 +401,6 @@
           <div class="stat-label">ผู้รับรางวัล</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num" id="stat-leo">0</div>
-          <div class="stat-label">Server Leonardo</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num" id="stat-sea">0</div>
-          <div class="stat-label">Server Season</div>
-        </div>
-        <div class="stat-card">
           <div class="stat-num" style="font-size:1rem;padding-top:6px;line-height:1.4;">จัดส่ง<br/>แล้ว ✓</div>
           <div class="stat-label">สถานะรางวัล</div>
         </div>
@@ -417,13 +409,8 @@
       <!-- Search -->
       <div class="search-row">
         <input class="search-input" type="text" id="searchInput"
-               placeholder="🔍  ค้นหาชื่อ Facebook / EXE ID / Server…"
+               placeholder="🔍  ค้นหาชื่อ Facebook / EXE ID…"
                oninput="filterTable()"/>
-        <select class="filter-select" id="serverFilter" onchange="filterTable()">
-          <option value="">ทุก Server</option>
-          <option value="Leonardo">Leonardo</option>
-          <option value="Season">Season</option>
-        </select>
       </div>
 
       <p class="scroll-hint">👈 เลื่อนซ้าย-ขวาเพื่อดูข้อมูลเพิ่มเติม 👉</p>
@@ -477,36 +464,49 @@
   }
 
   const winners = [
-    {no:1, fb:'Peeradon Ponrob', exe:'XMUHIN0RHGCEK5ZLTR1SAETLU', server:'Season', status:'delivered'},
-    {no:2, fb:'Sakda Wittayarojworng', exe:'1J7YSSW2BAAWZF2OPU4URKCOI', server:'Season', status:'delivered'},
-    {no:3, fb:'Puwadon Sungkawitoon', exe:'YCHFYGGMMT80ZM6AIGWXV9ERL', server:'Season', status:'delivered'},
-    {no:4, fb:'Whitez RaBbitz', exe:'KGEARFUOX5Q9EZT2YZWKFKMO1', server:'Season', status:'delivered'},
-    {no:5, fb:'Konp Konp', exe:'7E83ZXSFXXEOGSY3WHZRODPBP', server:'Season', status:'delivered'},
-    {no:6, fb:'Zig Zag', exe:'SLLGMOYA1NKUOZ0IICSJAHR4W', server:'Season', status:'delivered'},
-    {no:7, fb:'Chitsanupong Watcharamaleekul', exe:'NCPGUQEBYLXDJE7PWAJBZ60NP', server:'Season', status:'delivered'},
-    {no:8, fb:'ผู้ชายธรรมดา กับหมาหน้าดำ', exe:'F90HQ36X9EABBEBFUPFXK9EAX', server:'Season', status:'delivered'},
-    {no:9, fb:'Phutipong Peleewong', exe:'NSO9JHYR0SJSM51LFHYFDYV9L', server:'Season', status:'delivered'},
-    {no:10, fb:'Cee Cee', exe:'7HPVDZHX0MBRV5UCBVK5BJAJM', server:'Season', status:'delivered'},
-    {no:11, fb:'NatTha Wut SajJano', exe:'CTY37TXQVEG4XZONPKIBREMFP', server:'Season', status:'delivered'},
-    {no:12, fb:'Perawat Van Parks', exe:'LZLVKHLSS2ZRUSTAZCXPIGUPV', server:'Season', status:'delivered'},
-    {no:13, fb:'อยู่คนเดียวให้ชิน ไม่ต้องอินกับอะไร', exe:'BGD1XJZKSCVHROMND3CQNUYHU', server:'Season', status:'delivered'},
-    {no:14, fb:'Thanapat Ekkapong', exe:'Q8DHS27MSS0GZURSLZVPMAXRF', server:'Season', status:'delivered'},
-    {no:15, fb:'Natanon Wisessri', exe:'SY1GIXYV9JNM42PPO3RQOSUQN', server:'Season', status:'delivered'},
-    {no:16, fb:'Tatpong Pintumakin', exe:'CIUUKFJK3UNNOBDN0LA68ZMV5', server:'Season', status:'delivered'},
-    {no:17, fb:'Champ FT', exe:'WU5KQZ9OLQNZR6PFB99LSEOJH', server:'Season', status:'delivered'},
-    {no:18, fb:'Pattapong Boonkrataeung', exe:'hellofriday321', server:'Season', status:'delivered'},
-    {no:19, fb:'Mylife Itme', exe:'ZKTIS9HEYFIHZXUFSZMHHACZE', server:'Season', status:'delivered'},
-    {no:20, fb:'อย่าเยอะ พี่ไม่ชอบ', exe:'PZWWJPMTLXEEARPFDZEDX2UJ9', server:'Season', status:'delivered'},
-    {no:21, fb:'อานนท์ ปิ่นแสง', exe:'FWUFSIWJO0SXPY3R1RLSEJ2UN', server:'Season', status:'delivered'},
-    {no:22, fb:'Pramode Nitipong', exe:'XOXBFGKNCB5SF8X2PHC115R9S', server:'Season', status:'delivered'},
-    {no:23, fb:'Pornanun Khwanmueang', exe:'H4TC4VJBWJOYH8EP0XFENLRVJ', server:'Season', status:'delivered'},
-    {no:24, fb:'Wanitsa Wisessri', exe:'0KZZY4K3BEF0YROTAAQ41EBNJ', server:'Season', status:'delivered'},
-    {no:25, fb:'Chai Kul', exe:'MXHVL6TKLWTVC8AUXWHL2EO0L', server:'Season', status:'delivered'},
-    {no:26, fb:'Korachai Kengkarn', exe:'XAKAOWFYJCVBXA1LK2P5GNQI8', server:'Season', status:'delivered'},
-    {no:27, fb:'Pariwat Aramashi', exe:'JIOEDX1PGNXDEDQTMDICEBBYE', server:'Season', status:'delivered'},
+    {no:1, fb:'Sai Jang Saizo', exe:'EBGRGYWPZMWDKYUYU1Q3VRMSI', server:'Season', status:'delivered'},
+    {no:2, fb:'Zephirothzt Wallace', exe:'2RXY7BBJKENZYJTDABZ8TKA6R', server:'Season', status:'delivered'},
+    {no:3, fb:'ชลัสพงศ์ ธูปพร', exe:'ZK1Y2P0IRPJYBV4JDYYOHQWZN', server:'Season', status:'delivered'},
+    {no:4, fb:'Pao Srikornvit Qiu', exe:'JQWJRCCZWNL2II8S1QGF3HQAV', server:'Season', status:'delivered'},
+    {no:5, fb:'Puwadon Sungkawitoon', exe:'YCHFYGGMMT80ZM6AIGWXV9ERL', server:'Season', status:'delivered'},
+    {no:6, fb:'Peeradon Ponrob', exe:'XMUHIN0RHGCEK5ZLTR1SAETLU', server:'Season', status:'delivered'},
+    {no:7, fb:'Cee Cee', exe:'7HPVDZHX0MBRV5UCBVK5BJAJM', server:'Season', status:'delivered'},
+    {no:8, fb:'Jetsadakorn Phontawee', exe:'7FWPWAEFUF2ZIENFJSIU0FFTR', server:'Season', status:'delivered'},
+    {no:9, fb:'อยู่คนเดียวให้ชิน ไม่ต้องอินกับอะไร', exe:'BGD1XJZKSCVHROMND3CQNUYHU', server:'Season', status:'delivered'},
+    {no:10, fb:'Chitsanupong Watcharamaleekul', exe:'NCPGUQEBYLXDJE7PWAJBZ60NP', server:'Season', status:'delivered'},
+    {no:11, fb:'Wanitsa Wisessri', exe:'0KZZY4K3BEF0YROTAAQ41EBNJ', server:'Season', status:'delivered'},
+    {no:12, fb:'Nai M Ratch', exe:'YATN2WRTZ2P9F0ITA3U85K15R', server:'Season', status:'delivered'},
+    {no:13, fb:'Supakrid Lerdkiatkul', exe:'H2MFKHI9XR7ULIMFEWSFYDX60', server:'Season', status:'delivered'},
+    {no:14, fb:'Sakda Wittayarojworng', exe:'1J7YSSW2BAAWZF2OPU4URKCOI', server:'Season', status:'delivered'},
+    {no:15, fb:'Perawat Van Parks', exe:'LZLVKHLSS2ZRUSTAZCXPIGUPV', server:'Season', status:'delivered'},
+    {no:16, fb:'Pariwat Aramashi', exe:'JIOEDX1PGNXDEDQTMDICEBBYE', server:'Season', status:'delivered'},
+    {no:17, fb:'Destilation Rsill', exe:'QI23PPMLTMFBF8CCXYWJ1BOBC', server:'Season', status:'delivered'},
+    {no:18, fb:'Nopadon ChansomphoThawee', exe:'YLAPNRCVYKHD8DPKP58DWPMO3', server:'Season', status:'delivered'},
+    {no:19, fb:'Phutipong Peleewong', exe:'NSO9JHYR0SJSM51LFHYFDYV9L', server:'Season', status:'delivered'},
+    {no:20, fb:'Napapon Chansawek', exe:'HJNPNI6IXQK72J0TWRQ5VL6P3', server:'Season', status:'delivered'},
+    {no:21, fb:'Phuwanuttha Sriray', exe:'BLPZI9Q1T4ROOPOLFHUT1I3Y0', server:'Season', status:'delivered'},
+    {no:22, fb:'Jesada J Ccl', exe:'1GYWBEUGVMLJVIM5R47V68MRW', server:'Season', status:'delivered'},
+    {no:23, fb:'รักชาติ ยิ่งชีพ', exe:'PZWWJPMTLXEEARPFDZEDX2UJ9', server:'Season', status:'delivered'},
+    {no:24, fb:'ออเอี้ยง เลี้ยงฟายเฒ่า', exe:'ELWXB6NY2BO7DW6CLMBVCIBMI', server:'Season', status:'delivered'},
+    {no:25, fb:'Pornanun Khwanmueang', exe:'H4TC4VJBWJOYH8EP0XFENLRVJ', server:'Season', status:'delivered'},
+    {no:26, fb:'Natanon Wisessri', exe:'SY1GIXYV9JNM42PPO3RQOSUQN', server:'Season', status:'delivered'},
+    {no:27, fb:'Mylife Itme', exe:'ZKTIS9HEYFIHZXUFSZMHHACZE', server:'Season', status:'delivered'},
+    {no:28, fb:'Eternal Boys', exe:'TMLDVZXJGRC2YADZBSZ5ZNNIB', server:'Season', status:'delivered'},
+    {no:29, fb:'Bank Zarotica', exe:'OGTTK9JLMQIABI3UNHL0OEHTJ', server:'Season', status:'delivered'},
+    {no:30, fb:'Whitez RaBbitz', exe:'KGEARFUOX5Q9EZT2YZWKFKMO1', server:'Season', status:'delivered'},
+    {no:31, fb:'NatTha Wut SajJano', exe:'CTY37TXQVEG4XZONPKIBREMFP', server:'Season', status:'delivered'},
+    {no:32, fb:'Zig Zag', exe:'SLLGMOYA1NKUOZ0IICSJAHR4W', server:'Season', status:'delivered'},
+    {no:33, fb:'Chai Kul', exe:'MXHVL6TKLWTVC8AUXWHL2EO0L', server:'Season', status:'delivered'},
+    {no:34, fb:'Ray Pikas', exe:'NGWSRAW1Y4XPAFTSJ8O4DMDO6', server:'Season', status:'delivered'},
+    {no:35, fb:'ทศพล เผ่าพงษ์', exe:'3NSYH51TP7QN2NE9GC6IMWP0R', server:'Season', status:'delivered'},
+    {no:36, fb:'Pow Pow', exe:'1KRDVP1UML56I6DNTSHUUNHIW', server:'Season', status:'delivered'},
+    {no:37, fb:'อานนท์ ปิ่นแสง', exe:'FWUFSIWJO0SXPY3R1RLSEJ2UN', server:'Season', status:'delivered'},
+    {no:38, fb:'Meta Kiatmolee', exe:'TYU3T0U7XPVESZYOCQSYWK5UP', server:'Season', status:'delivered'},
+    {no:39, fb:'Kaen Novice', exe:'X7JB4LYB7WMGTAVC8VXVCIRRO', server:'Season', status:'delivered'},
+    {no:40, fb:'ทีอาร์ซีเอ็นจี จีซอง', exe:'DB6ORKF2BDXIZVNRYRDNAFR4E', server:'Season', status:'delivered'},
+    {no:41, fb:'Peeradej Utza', exe:'1PFRWABAZP9D8DJBD9ZYHB9OY', server:'Season', status:'delivered'},
   ];
 
-  /* ═══ ไม่ต้องแก้ส่วนด้านล่าง ═══ */
   let sortCol = -1, sortDir = 1;
 
   function renderTable(data) {
@@ -530,21 +530,15 @@
   }
 
   function updateStats(data) {
-    const leo = data.filter(w => w.server === 'Leonardo').length;
-    const sea = data.filter(w => w.server === 'Season').length;
     document.getElementById('stat-total').textContent = data.length;
-    document.getElementById('stat-leo').textContent   = leo;
-    document.getElementById('stat-sea').textContent   = sea;
     document.getElementById('countChip').textContent  = data.length + ' ผู้โชคดี';
   }
 
   function getFiltered() {
-    const q  = document.getElementById('searchInput').value.toLowerCase();
-    const sv = document.getElementById('serverFilter').value;
+    const q = document.getElementById('searchInput').value.toLowerCase();
     return winners.filter(w =>
-      (!sv || w.server === sv) &&
-      (!q  || w.fb.toLowerCase().includes(q) ||
-              w.exe.toLowerCase().includes(q))
+      (!q || w.fb.toLowerCase().includes(q) ||
+             w.exe.toLowerCase().includes(q))
     );
   }
 
