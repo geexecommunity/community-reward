@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ประกาศผลรางวัล เตะบอลสะท้านโลก | Granado Espada</title>
+  <title>ประกาศผลรางวัล | Granado Espada</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -327,7 +327,8 @@
   </style>
 </head>
 <body>
-<!-- ═══════════════ HEADER ═══════════════ -->
+
+
 <header>
   <svg class="corner-deco tl" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M4 4 L4 40 Q4 4 40 4 Z" stroke="#c9963a" stroke-width="1.5" fill="none"/>
@@ -359,7 +360,8 @@
   </svg>
   <div class="header-badge">✦ Community Event ✦</div>
   <div class="header-crest">⚜️</div>
-  <h1 class="header-title-main">ประกาศผลรางวัล<br/>"เตะบอลสะท้านโลก"</h1>
+  
+  <h1 class="header-title-main">ประกาศผลรางวัล<br/>กิจกรรมคอมมูนิตี้</h1>
   <p class="header-title-sub">Granado Espada &nbsp;·&nbsp; Winner Announcement</p>
   <div class="ornament"></div>
   <br/>
@@ -372,33 +374,50 @@
   </div>
 </header>
 
-<!-- ═══════════════ MAIN ═══════════════ -->
+
 <div class="container">
   <div class="tabs-wrapper">
     <p class="tabs-label">— เลือกกิจกรรม —</p>
     <div class="tabs" role="tablist">
-      <button class="tab-btn active" onclick="switchTab('week1',this)" role="tab">
-        <span class="tab-name">🏆 เตะบอลสะท้านโลก</span>
-        <span class="tab-date">📅 20 ก.ค. 2026 – 24 ก.ค. 2026</span>
-        <span class="tab-num">41 รางวัล</span>
+      <button class="tab-btn active" onclick="switchTab('memtest',this)" role="tab">
+        <span class="tab-name">🏰 GE Memory Test</span>
+        <span class="tab-date">📅 23–26 ก.ค. 2569</span>
+        <span class="tab-num">30 รางวัล</span>
+      </button>
+
+      <button class="tab-btn" onclick="switchTab('guesschar',this)" role="tab">
+        <span class="tab-name">🎭 ทายตัวละครไหน ทายซิ??</span>
+        <span class="tab-date">📅 3–7 ส.ค. 2569</span>
+        <span class="tab-num">123 รางวัล</span>
       </button>
     </div>
 
-    <!-- PANEL -->
-    <div class="tab-panel active" id="panel-week1">
+    <div class="tab-panel active" id="panel-memtest">
       <div class="panel-header">
         <div class="panel-title">🎖️ Winner List &nbsp;|&nbsp; รายชื่อผู้ชนะ</div>
         <div class="panel-meta">
-          <span class="meta-chip week">Week 5</span>
-          <span class="meta-chip count" id="countChip">41 ผู้โชคดี</span>
+          <span class="meta-chip week">รางวัล 30 คนแรกที่ตอบถูก</span>
+          <span class="meta-chip count" id="countChip-memtest">0 ผู้โชคดี</span>
         </div>
       </div>
 
-      <!-- Stats -->
+      <div style="background:rgba(201,150,58,.10); border:1px solid var(--gold-dark); border-radius:6px; padding:14px 18px; margin-bottom:18px;">
+        <div style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:.85rem; letter-spacing:1px; margin-bottom:8px;">🎁 รางวัลที่ได้รับ</div>
+        <div style="color:var(--text-light); font-size:.95rem; line-height:1.8;"><div>• Collection Character Card Box of Heaven Ticket ×1</div><div>• Barrack Slot Permit - Event ×3</div></div>
+      </div>
+
       <div class="stats-bar">
         <div class="stat-card">
-          <div class="stat-num" id="stat-total">0</div>
+          <div class="stat-num" id="stat-total-memtest">0</div>
           <div class="stat-label">ผู้รับรางวัล</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="stat-leo-memtest">0</div>
+          <div class="stat-label">Server Leonardo</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="stat-sea-memtest">0</div>
+          <div class="stat-label">Server Season</div>
         </div>
         <div class="stat-card">
           <div class="stat-num" style="font-size:1rem;padding-top:6px;line-height:1.4;">จัดส่ง<br/>แล้ว ✓</div>
@@ -406,35 +425,100 @@
         </div>
       </div>
 
-      <!-- Search -->
       <div class="search-row">
-        <input class="search-input" type="text" id="searchInput"
-               placeholder="🔍  ค้นหาชื่อ Facebook / EXE ID…"
-               oninput="filterTable()"/>
+        <input class="search-input" type="text" id="searchInput-memtest"
+               placeholder="🔍  ค้นหาชื่อ Facebook / EXE ID / Server…"
+               oninput="filterTable('memtest')"/>
+        <select class="filter-select" id="serverFilter-memtest" onchange="filterTable('memtest')">
+          <option value="">ทุก Server</option>
+          <option value="Leonardo">Leonardo</option>
+          <option value="Season">Season</option>
+        </select>
       </div>
 
       <p class="scroll-hint">👈 เลื่อนซ้าย-ขวาเพื่อดูข้อมูลเพิ่มเติม 👉</p>
 
-      <!-- Table -->
       <div class="table-wrap">
-        <table id="winnerTable">
+        <table id="winnerTable-memtest">
           <thead>
             <tr>
-              <th onclick="sortTable(0)">#</th>
-              <th onclick="sortTable(1)">Facebook</th>
-              <th onclick="sortTable(2)">EXE ID (Code)</th>
+              <th onclick="sortTable('memtest',0)">#</th>
+              <th onclick="sortTable('memtest',1)">Facebook</th>
+              <th onclick="sortTable('memtest',2)">EXE ID (Code)</th>
               <th>สถานะการจัดส่ง</th>
             </tr>
           </thead>
-          <tbody id="tableBody"></tbody>
+          <tbody id="tableBody-memtest"></tbody>
         </table>
-        <div class="no-results" id="noResults" style="display:none;">ไม่พบรายชื่อที่ค้นหา 🔍</div>
+        <div class="no-results" id="noResults-memtest" style="display:none;">ไม่พบรายชื่อที่ค้นหา 🔍</div>
       </div>
-    </div><!-- /tab-panel -->
-  </div><!-- /tabs-wrapper -->
-</div><!-- /container -->
+    </div>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
+    <div class="tab-panel" id="panel-guesschar">
+      <div class="panel-header">
+        <div class="panel-title">🎖️ Winner List &nbsp;|&nbsp; รายชื่อผู้ชนะ</div>
+        <div class="panel-meta">
+          <span class="meta-chip week">แจกทุกคนที่ร่วมสนุก</span>
+          <span class="meta-chip count" id="countChip-guesschar">0 ผู้โชคดี</span>
+        </div>
+      </div>
+
+      <div style="background:rgba(201,150,58,.10); border:1px solid var(--gold-dark); border-radius:6px; padding:14px 18px; margin-bottom:18px;">
+        <div style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:.85rem; letter-spacing:1px; margin-bottom:8px;">🎁 รางวัลที่ได้รับ</div>
+        <div style="color:var(--text-light); font-size:.95rem; line-height:1.8;"><div>• Autumn Character Pick Up Medal Stone ×1</div><div>• Weapon Costume Ticket (Event) ×1</div></div>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-card">
+          <div class="stat-num" id="stat-total-guesschar">0</div>
+          <div class="stat-label">ผู้รับรางวัล</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="stat-leo-guesschar">0</div>
+          <div class="stat-label">Server Leonardo</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="stat-sea-guesschar">0</div>
+          <div class="stat-label">Server Season</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" style="font-size:1rem;padding-top:6px;line-height:1.4;">กำลัง<br/>จัดส่ง</div>
+          <div class="stat-label">สถานะรางวัล</div>
+        </div>
+      </div>
+
+      <div class="search-row">
+        <input class="search-input" type="text" id="searchInput-guesschar"
+               placeholder="🔍  ค้นหาชื่อ Facebook / EXE ID / Server…"
+               oninput="filterTable('guesschar')"/>
+        <select class="filter-select" id="serverFilter-guesschar" onchange="filterTable('guesschar')">
+          <option value="">ทุก Server</option>
+          <option value="Leonardo">Leonardo</option>
+          <option value="Season">Season</option>
+        </select>
+      </div>
+
+      <p class="scroll-hint">👈 เลื่อนซ้าย-ขวาเพื่อดูข้อมูลเพิ่มเติม 👉</p>
+
+      <div class="table-wrap">
+        <table id="winnerTable-guesschar">
+          <thead>
+            <tr>
+              <th onclick="sortTable('guesschar',0)">#</th>
+              <th onclick="sortTable('guesschar',1)">Facebook</th>
+              <th onclick="sortTable('guesschar',2)">EXE ID (Code)</th>
+              <th>สถานะการจัดส่ง</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody-guesschar"></tbody>
+        </table>
+        <div class="no-results" id="noResults-guesschar" style="display:none;">ไม่พบรายชื่อที่ค้นหา 🔍</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <footer>
   <div class="ornament"></div>
   <br/>
@@ -463,55 +547,17 @@
     return code.slice(0, mid - 4) + '********' + code.slice(mid + 4);
   }
 
-  const winners = [
-    {no:1, fb:'Sai Jang Saizo', exe:'EBGRGYWPZMWDKYUYU1Q3VRMSI', server:'Season', status:'delivered'},
-    {no:2, fb:'Zephirothzt Wallace', exe:'2RXY7BBJKENZYJTDABZ8TKA6R', server:'Season', status:'delivered'},
-    {no:3, fb:'ชลัสพงศ์ ธูปพร', exe:'ZK1Y2P0IRPJYBV4JDYYOHQWZN', server:'Season', status:'delivered'},
-    {no:4, fb:'Pao Srikornvit Qiu', exe:'JQWJRCCZWNL2II8S1QGF3HQAV', server:'Season', status:'delivered'},
-    {no:5, fb:'Puwadon Sungkawitoon', exe:'YCHFYGGMMT80ZM6AIGWXV9ERL', server:'Season', status:'delivered'},
-    {no:6, fb:'Peeradon Ponrob', exe:'XMUHIN0RHGCEK5ZLTR1SAETLU', server:'Season', status:'delivered'},
-    {no:7, fb:'Cee Cee', exe:'7HPVDZHX0MBRV5UCBVK5BJAJM', server:'Season', status:'delivered'},
-    {no:8, fb:'Jetsadakorn Phontawee', exe:'7FWPWAEFUF2ZIENFJSIU0FFTR', server:'Season', status:'delivered'},
-    {no:9, fb:'อยู่คนเดียวให้ชิน ไม่ต้องอินกับอะไร', exe:'BGD1XJZKSCVHROMND3CQNUYHU', server:'Season', status:'delivered'},
-    {no:10, fb:'Chitsanupong Watcharamaleekul', exe:'NCPGUQEBYLXDJE7PWAJBZ60NP', server:'Season', status:'delivered'},
-    {no:11, fb:'Wanitsa Wisessri', exe:'0KZZY4K3BEF0YROTAAQ41EBNJ', server:'Season', status:'delivered'},
-    {no:12, fb:'Nai M Ratch', exe:'YATN2WRTZ2P9F0ITA3U85K15R', server:'Season', status:'delivered'},
-    {no:13, fb:'Supakrid Lerdkiatkul', exe:'H2MFKHI9XR7ULIMFEWSFYDX60', server:'Season', status:'delivered'},
-    {no:14, fb:'Sakda Wittayarojworng', exe:'1J7YSSW2BAAWZF2OPU4URKCOI', server:'Season', status:'delivered'},
-    {no:15, fb:'Perawat Van Parks', exe:'LZLVKHLSS2ZRUSTAZCXPIGUPV', server:'Season', status:'delivered'},
-    {no:16, fb:'Pariwat Aramashi', exe:'JIOEDX1PGNXDEDQTMDICEBBYE', server:'Season', status:'delivered'},
-    {no:17, fb:'Destilation Rsill', exe:'QI23PPMLTMFBF8CCXYWJ1BOBC', server:'Season', status:'delivered'},
-    {no:18, fb:'Nopadon ChansomphoThawee', exe:'YLAPNRCVYKHD8DPKP58DWPMO3', server:'Season', status:'delivered'},
-    {no:19, fb:'Phutipong Peleewong', exe:'NSO9JHYR0SJSM51LFHYFDYV9L', server:'Season', status:'delivered'},
-    {no:20, fb:'Napapon Chansawek', exe:'HJNPNI6IXQK72J0TWRQ5VL6P3', server:'Season', status:'delivered'},
-    {no:21, fb:'Phuwanuttha Sriray', exe:'BLPZI9Q1T4ROOPOLFHUT1I3Y0', server:'Season', status:'delivered'},
-    {no:22, fb:'Jesada J Ccl', exe:'1GYWBEUGVMLJVIM5R47V68MRW', server:'Season', status:'delivered'},
-    {no:23, fb:'รักชาติ ยิ่งชีพ', exe:'PZWWJPMTLXEEARPFDZEDX2UJ9', server:'Season', status:'delivered'},
-    {no:24, fb:'ออเอี้ยง เลี้ยงฟายเฒ่า', exe:'ELWXB6NY2BO7DW6CLMBVCIBMI', server:'Season', status:'delivered'},
-    {no:25, fb:'Pornanun Khwanmueang', exe:'H4TC4VJBWJOYH8EP0XFENLRVJ', server:'Season', status:'delivered'},
-    {no:26, fb:'Natanon Wisessri', exe:'SY1GIXYV9JNM42PPO3RQOSUQN', server:'Season', status:'delivered'},
-    {no:27, fb:'Mylife Itme', exe:'ZKTIS9HEYFIHZXUFSZMHHACZE', server:'Season', status:'delivered'},
-    {no:28, fb:'Eternal Boys', exe:'TMLDVZXJGRC2YADZBSZ5ZNNIB', server:'Season', status:'delivered'},
-    {no:29, fb:'Bank Zarotica', exe:'OGTTK9JLMQIABI3UNHL0OEHTJ', server:'Season', status:'delivered'},
-    {no:30, fb:'Whitez RaBbitz', exe:'KGEARFUOX5Q9EZT2YZWKFKMO1', server:'Season', status:'delivered'},
-    {no:31, fb:'NatTha Wut SajJano', exe:'CTY37TXQVEG4XZONPKIBREMFP', server:'Season', status:'delivered'},
-    {no:32, fb:'Zig Zag', exe:'SLLGMOYA1NKUOZ0IICSJAHR4W', server:'Season', status:'delivered'},
-    {no:33, fb:'Chai Kul', exe:'MXHVL6TKLWTVC8AUXWHL2EO0L', server:'Season', status:'delivered'},
-    {no:34, fb:'Ray Pikas', exe:'NGWSRAW1Y4XPAFTSJ8O4DMDO6', server:'Season', status:'delivered'},
-    {no:35, fb:'ทศพล เผ่าพงษ์', exe:'3NSYH51TP7QN2NE9GC6IMWP0R', server:'Season', status:'delivered'},
-    {no:36, fb:'Pow Pow', exe:'1KRDVP1UML56I6DNTSHUUNHIW', server:'Season', status:'delivered'},
-    {no:37, fb:'อานนท์ ปิ่นแสง', exe:'FWUFSIWJO0SXPY3R1RLSEJ2UN', server:'Season', status:'delivered'},
-    {no:38, fb:'Meta Kiatmolee', exe:'TYU3T0U7XPVESZYOCQSYWK5UP', server:'Season', status:'delivered'},
-    {no:39, fb:'Kaen Novice', exe:'X7JB4LYB7WMGTAVC8VXVCIRRO', server:'Season', status:'delivered'},
-    {no:40, fb:'ทีอาร์ซีเอ็นจี จีซอง', exe:'DB6ORKF2BDXIZVNRYRDNAFR4E', server:'Season', status:'delivered'},
-    {no:41, fb:'Peeradej Utza', exe:'1PFRWABAZP9D8DJBD9ZYHB9OY', server:'Season', status:'delivered'},
-  ];
+  const DATASETS = {
+    memtest: [{"no": 1, "fb": "Cee Cee", "exe": "7HPVDZHX0MBRV5UCBVK5BJAJM", "server": "Season"}, {"no": 2, "fb": "Phutipong Peleewong", "exe": "NSO9JHYR0SJSM51LFHYFDYV9L", "server": "Season"}, {"no": 3, "fb": "Tanu Tanukiku", "exe": "NRDLSQZJDKXVNFNHJDI29P1Z7", "server": "Season"}, {"no": 4, "fb": "Kritsanapong Supagitroengrote", "exe": "CE24CU8RS762YQXCGLB4UJ6RR", "server": "Season"}, {"no": 5, "fb": "Supakrid Lerdkiatkul", "exe": "H2MFKHI9XR7ULIMFEWSFYDX60", "server": "Season"}, {"no": 6, "fb": "Sarawut Sangsawrang", "exe": "SSW936SIZYD6UQQ3LRFITCMJ5", "server": "Season"}, {"no": 7, "fb": "Zephirothzt Wallace", "exe": "2RXY7BBJKENZYJTDABZ8TKA6R", "server": "Season"}, {"no": 8, "fb": "Laval Hks", "exe": "SDPCKTIBB09VDETQLQUD3NGHA", "server": "Season"}, {"no": 9, "fb": "Pornpisut Na Nakhon", "exe": "IJJW0UJU7HDNSC7C6PLR1CGJK", "server": "Season"}, {"no": 10, "fb": "Natanon Wisessri", "exe": "SY1GIXYV9JNM42PPO3RQOSUQN", "server": "Season"}, {"no": 11, "fb": "Wanitsa Wisessri", "exe": "0KZZY4K3BEF0YROTAAQ41EBNJ", "server": "Season"}, {"no": 12, "fb": "Mil Ra", "exe": "VZKYNWOB3SM6BGGRFJUPPL7PS", "server": "Season"}, {"no": 13, "fb": "Anusorn Youngdee", "exe": "XR0KQOM8E8CZGCJGEWYQSSVNA", "server": "Season"}, {"no": 14, "fb": "Sakda Wittayarojworng", "exe": "1J7YSSW2BAAWZF2OPU4URKCOI", "server": "Season"}, {"no": 15, "fb": "Bank Zarotica", "exe": "OGTTK9JLMQIABI3UNHL0OEHTJ", "server": "Season"}, {"no": 16, "fb": "ชลัสพงศ์ ธูปพร", "exe": "ZK1Y2P0IRPJYBV4JDYYOHQWZN", "server": "Season"}, {"no": 17, "fb": "Peeradej Utza", "exe": "1PFRWABAZP9D8DJBD9ZYHB9OY", "server": "Season"}, {"no": 18, "fb": "Somsree Fourtwotwor", "exe": "VXCUBRJXZYOSIFOX1FWVHARYX", "server": "Season"}, {"no": 19, "fb": "Zelnite Yea", "exe": "HSLCJJXWQH8ETWQE6ZWKAICPG", "server": "Season"}, {"no": 20, "fb": "ทีอาร์ซีเอ็นจี จีซอง", "exe": "DB6ORKF2BDXIZVNRYRDNAFR4E", "server": "Season"}, {"no": 21, "fb": "Mylife Itme", "exe": "ZKTIS9HEYFIHZXUFSZMHHACZE", "server": "Season"}, {"no": 22, "fb": "Zen Pasu", "exe": "D3KZV4AD8H97JZ9IT0UUWJE44", "server": "Season"}, {"no": 23, "fb": "น้าเช สิบล้อ", "exe": "CLWGCKZSCKWBI4PZJWEJXC1GQ", "server": "Season"}, {"no": 24, "fb": "โจ โจ้", "exe": "Z9ICXA1P0UPDJG6VP0B3LXOXP", "server": "Season"}, {"no": 25, "fb": "Jetsadakorn Phontawee", "exe": "7FWPWAEFUF2ZIENFJSIU0FFTR", "server": "Season"}, {"no": 26, "fb": "Pariwat Aramashi", "exe": "JIOEDX1PGNXDEDQTMDICEBBYE", "server": "Season"}, {"no": 27, "fb": "Sunchai Chocksomngam", "exe": "I8OTQ587SDRISWTXQEBJVXSGR", "server": "Season"}, {"no": 28, "fb": "Zig Zag", "exe": "SLLGMOYA1NKUOZ0IICSJAHR4W", "server": "Season"}, {"no": 29, "fb": "อยู่คนเดียวให้ชิน ไม่ต้องอินกับอะไร", "exe": "BGD1XJZKSCVHROMND3CQNUYHU", "server": "Season"}, {"no": 30, "fb": "Sepente Peth", "exe": "A1QXLI9JFR6YMLELNZSEJ38KI", "server": "Season"}],
+    guesschar: [{"no": 1, "fb": "ตุ๊ต๊ะ ต๋อมแต๋ม", "exe": "TZDNOFTCFMIK1WPHE91DLOWQ9", "server": "Leonardo"}, {"no": 2, "fb": "Xiao Liu", "exe": "F7EPTHT7NJRDU2QCP24KSHPID", "server": "Leonardo"}, {"no": 3, "fb": "Rukbodin Lib", "exe": "TLAO42JH1EJBXF56HCKESDFSR", "server": "Leonardo"}, {"no": 4, "fb": "Supharoek Chupradit", "exe": "GKCN4E3JDK0IAPSQZAYM4M2P9", "server": "Leonardo"}, {"no": 5, "fb": "Bayaki Tabuki", "exe": "TFMHWRHWKJTRYDM0HLVTHHSQW", "server": "Leonardo"}, {"no": 6, "fb": "ณัฏฐกิตติ์ สงเคราะห์", "exe": "QDNNMPJDCES3WPELYJACEM0QK", "server": "Leonardo"}, {"no": 7, "fb": "Fiat Thunwa Sagittarius", "exe": "I5XXMMSIQQ47N7WNUBD26XWUH", "server": "Leonardo"}, {"no": 8, "fb": "Matthew Brown", "exe": "TG7QSVOVKYJ4BM5HVXVNLPUYK", "server": "Leonardo"}, {"no": 9, "fb": "ยุน ยุน", "exe": "YNB1ATX4AX286FUMKGNHE4LQT", "server": "Leonardo"}, {"no": 10, "fb": "Vitsarut Prajongjut", "exe": "FFIFETY7KVBCKG9XZVZEW0Y34", "server": "Leonardo"}, {"no": 11, "fb": "เพรช เกษม", "exe": "CGLOHSCXGU6YEHVVRON8654MD", "server": "Leonardo"}, {"no": 12, "fb": "Sitthiphun Makmit", "exe": "KMOXNVDAKFIFV2FZ4GAVIQIMI", "server": "Leonardo"}, {"no": 13, "fb": "Erng Janaboon", "exe": "3UONZOXVT5TSVXD7IGR7V4CML", "server": "Leonardo"}, {"no": 14, "fb": "Koko Pattarawut", "exe": "BOJ92MJOLHFRUQ3RNTAGT2QL8", "server": "Leonardo"}, {"no": 15, "fb": "Lee Fafa", "exe": "XC9J1B6KHN4PFRUQVSV3V7EVK", "server": "Leonardo"}, {"no": 16, "fb": "Dookie Dook", "exe": "EZ4OBVWQEGNABCV6IDANJ6FON", "server": "Leonardo"}, {"no": 17, "fb": "Nui BeStrong", "exe": "AK1M4GI8KIFMAE38WI3EOEEU4", "server": "Leonardo"}, {"no": 18, "fb": "Nitipong Kitnukhror", "exe": "54XWLJ2YX5GX2GAQ5MWIR15KM", "server": "Leonardo"}, {"no": 19, "fb": "Ohmie Navie", "exe": "IFZ37DA0PLDCXXDBVZQNJSDK4", "server": "Leonardo"}, {"no": 20, "fb": "Chan Chan", "exe": "B0B922PVLW1QZHUWHQ8YJYHRF", "server": "Leonardo"}, {"no": 21, "fb": "Tatpong Pintumakin", "exe": "7LO0VGRNAKCD6VA8T7GGTTJDA", "server": "Leonardo"}, {"no": 22, "fb": "Taiki Watanabe", "exe": "XTD0CO2JQMI5JJ3JJVNJPPSNJ", "server": "Leonardo"}, {"no": 23, "fb": "ลุงบี มาแว้ว", "exe": "EAKZMVFYZIO9C4SFYJCTQERQS", "server": "Leonardo"}, {"no": 24, "fb": "ธานัท อยู่กิจติชัย", "exe": "FPJEBWYHV4AMSJTGRJT0VEUC7", "server": "Leonardo"}, {"no": 25, "fb": "Napat Tiewwilai", "exe": "EDYSM9N12RWPZXDQVGDVAWRWR", "server": "Leonardo"}, {"no": 26, "fb": "Oak Supakorn", "exe": "ASF7DBGGNZMRRUJOJKT6X6BTT", "server": "Leonardo"}, {"no": 27, "fb": "อาบีดิล บิดิลและ", "exe": "KAPLXXNJOMJLU7CQLDHPHPDY", "server": "Leonardo", "status": "error"}, {"no": 28, "fb": "เจษริน นวาศวิน", "exe": "KCLP0TLRLILDKIXSXK8UBOO0A", "server": "Leonardo"}, {"no": 29, "fb": "Thitipong Ler", "exe": "GRXZLKFZNFVRDASDKALNKMINI", "server": "Leonardo"}, {"no": 30, "fb": "ทิน ภัทร", "exe": "PDET89NEUPHM1HCFZQY1JWIEF", "server": "Leonardo"}, {"no": 31, "fb": "Kittiphat Isuriyakornthep", "exe": "VJ9IKC518LPUGBBZNZ4MCB4QF", "server": "Leonardo"}, {"no": 32, "fb": "Worayuth Kammongkol", "exe": "AH5RIN2OW8JAEVP4YXZZGVMSM", "server": "Leonardo"}, {"no": 33, "fb": "เด็กน้อย หัวเป็ด", "exe": "OF0LUKVOXOGN4H2RYNB6KRG30", "server": "Leonardo"}, {"no": 34, "fb": "Kiattisak Yampho", "exe": "SEV6YUCPTWWRCEWCST4MJSLKM", "server": "Leonardo"}, {"no": 35, "fb": "Chatchawarn Makha", "exe": "VV81QVVULLPW9EZXN0ANLWVQQ", "server": "Leonardo"}, {"no": 36, "fb": "Kawi Thm", "exe": "FNH0TC9DZZXJLEKDHPBIX5NMJ", "server": "Leonardo"}, {"no": 37, "fb": "อิทธิ มันต์", "exe": "NIYZUZZLZQZOVKS2NXHORMQMQ", "server": "Leonardo"}, {"no": 38, "fb": "Nthnk Chmn", "exe": "G41ZVJVO0YEWWBJTBLD2FQFJK", "server": "Leonardo"}, {"no": 39, "fb": "โจ โจ้", "exe": "Z9ICXA1P0UPDJG6VP0B3LXOXP", "server": "Leonardo"}, {"no": 40, "fb": "Kittichai Wattanajiranon", "exe": "OHT5JMT6PG4R4MRO6SPK9M2ZU", "server": "Leonardo"}, {"no": 41, "fb": "Zolzon Spencer", "exe": "SNERWYIKK4IUER1EY7LDKFJVI", "server": "Leonardo"}, {"no": 42, "fb": "เป๊ปซี่ จรัญชัย", "exe": "kalon003344", "server": "Leonardo"}, {"no": 43, "fb": "Sathit Khulertrakul", "exe": "DELGLDNGGOPBOHORJOBVXCPGJ", "server": "Leonardo"}, {"no": 44, "fb": "Benzdit Pipat", "exe": "benzdit12", "server": "Leonardo"}, {"no": 45, "fb": "อย่าเยอะ พี่ไม่ชอบ", "exe": "CFGNOG0AHMVOVB6ZMA8BCSI13", "server": "Leonardo"}, {"no": 46, "fb": "เจ้าชายหล่อ ท้ายแถว", "exe": "MVZK3UUR7H3K2ZXMRBPDITYUX", "server": "Leonardo"}, {"no": 47, "fb": "Narathip Promtong", "exe": "JPCMMH5TJONQRR0PL10XJAFUI", "server": "Leonardo"}, {"no": 48, "fb": "Lackey Moth", "exe": "5T3VASPAIQMD52OHS4BVNFBTZ", "server": "Leonardo"}, {"no": 49, "fb": "Tiwaz Narubadindecha", "exe": "KBEGLHJC6VXLCV33YJ1NNPXNX", "server": "Leonardo"}, {"no": 50, "fb": "สี เทา", "exe": "L3BUVEMAX3TV30KABKMCDIKAJ", "server": "Leonardo"}, {"no": 51, "fb": "Nutwarin Rin", "exe": "IOTN0Q8SYA5DQBL9H1ZSQCUXW", "server": "Leonardo"}, {"no": 52, "fb": "นิวัฒน์ ฟังปรัชญากุล", "exe": "PUABLELICKGTPXZYKBTAKX9H0", "server": "Leonardo"}, {"no": 53, "fb": "บุษณัฏ กิ่งเกตุ", "exe": "LW44BSKBHKKVVUE4BDAVFUWG7", "server": "Leonardo"}, {"no": 54, "fb": "Billy Gaming", "exe": "CF5KQFQD0N9DQ0LKG7WOG7MFK", "server": "Leonardo"}, {"no": 55, "fb": "ผู้ชายธรรมดา กับหมาหน้าดำ", "exe": "YFL5MW8AHM0WIMORSIBAYJWV5", "server": "Leonardo"}, {"no": 56, "fb": "Dusit Tancharoen", "exe": "LWWYG1HVL1SSYFTXEMR6LCESI", "server": "Leonardo"}, {"no": 57, "fb": "Annop Charoenkheaw", "exe": "XSUNEI3VQYQCEU9BTO9J52YCK", "server": "Leonardo"}, {"no": 58, "fb": "Beam Sp", "exe": "ERJKUJZOCDQGHAJO6MQTP5O6B", "server": "Leonardo"}, {"no": 59, "fb": "Taroz Satoz", "exe": "9THXHK1B0KWW7J9PTHMUSPGLP", "server": "Leonardo"}, {"no": 60, "fb": "Khocom SK", "exe": "WT486I9PJEEEDQMN15JAFEBTU", "server": "Leonardo"}, {"no": 61, "fb": "Sha Tar", "exe": "3X1SUXW34QCDYS3MOS2MNUTIO", "server": "Leonardo"}, {"no": 62, "fb": "แตงโม ชอบกินกล้วยค่ะ", "exe": "DOPWBJGNETOYA5ZMWY5C59T9V", "server": "Leonardo"}, {"no": 63, "fb": "Arnon Jansaka", "exe": "RLDFTIWQP1KNZFO3G0US6DJN1", "server": "Leonardo"}, {"no": 64, "fb": "Ao No Exorcist", "exe": "0LSFTJX1F6DFEW3LH2TWYQBY7", "server": "Leonardo"}, {"no": 65, "fb": "SK KhoKub", "exe": "JQCKQSPO19PJRNCHKCSYZDVAQ", "server": "Leonardo"}, {"no": 66, "fb": "Text Tester", "exe": "SPWJNEM1MAPX5TQABICII4D9R", "server": "Leonardo"}, {"no": 67, "fb": "Test Tablet", "exe": "ZJSSEHVJDTCLHFNLBKXI4VHTN", "server": "Leonardo"}, {"no": 68, "fb": "Pladaw Sk", "exe": "S5CWS9DFCTBUJOZBRGX8VTP6U", "server": "Leonardo"}, {"no": 69, "fb": "Satapon Sk", "exe": "T1YR39DLX5LMWVHF7HDUU1NLU", "server": "Leonardo"}, {"no": 70, "fb": "Zig Zag", "exe": "WF9TXXAHQNGAKPCZTUFVY98RY", "server": "Leonardo"}, {"no": 71, "fb": "Jnut Dudleyz", "exe": "OFVZUPN6AW2E25IFY68ULYLR3", "server": "Leonardo"}, {"no": 72, "fb": "Nipat", "exe": "LTXX0QVOCGNPMOCQYRLNVQKFV", "server": "Leonardo"}, {"no": 73, "fb": "วินัย ชื่นอารมย์", "exe": "NMDDRS5YMTSJ9K4NC3ULVWAQD", "server": "Season"}, {"no": 74, "fb": "Whitez RaBbitz", "exe": "KGEARFUOX5Q9EZT2YZWKFKMO1", "server": "Season"}, {"no": 75, "fb": "Sunchai Chocksomngam", "exe": "I8OTQ587SDRISWTXQEBJVXSGR", "server": "Season"}, {"no": 76, "fb": "Perawat Van Parks", "exe": "LZLVKHLSS2ZRUSTAZCXPIGUPV", "server": "Season"}, {"no": 77, "fb": "ติณห์ ติณห์", "exe": "EORM5A2ZSTIMAEHQIISEPER4R", "server": "Season"}, {"no": 78, "fb": "Anusorn Youngdee", "exe": "XR0KQOM8E8CZGCJGEWYQSSVNA", "server": "Season"}, {"no": 79, "fb": "Thongchai Ninwised", "exe": "ODDBNNB91JSQNJNURPBHCALWB", "server": "Season"}, {"no": 80, "fb": "Nantawat Chinjung Klaising", "exe": "QOLU2IE3IQ9MDYKC1VGQ7PCPO", "server": "Season"}, {"no": 81, "fb": "Jetsadakorn Phontawee", "exe": "7FWPWAEFUF2ZIENFJSIU0FFTR", "server": "Season"}, {"no": 82, "fb": "GoneWith TheWind", "exe": "7X1III0ZQH8O87GKG2QIIHFCN", "server": "Season"}, {"no": 83, "fb": "Peeradon Ponrob", "exe": "XMUHIN0RHGCEK5ZLTR1SAETLU", "server": "Season"}, {"no": 84, "fb": "ชลัสพงศ์ ธูปพร", "exe": "ZK1Y2P0IRPJYBV4JDYYOHQWZN", "server": "Season"}, {"no": 85, "fb": "Sepente Peth", "exe": "A1QXLI9JFR6YMLELNZSEJ38KI", "server": "Season"}, {"no": 86, "fb": "Pannatat Sripinittrakool", "exe": "VCUGL2WBY8HR3ER6S1GSQLYJ6", "server": "Season"}, {"no": 87, "fb": "เทรนเนอร์ หุ่นหมี มีหนวด", "exe": "TMQOUC4JJFU10ONUEGAHBYD0B", "server": "Season"}, {"no": 88, "fb": "ทศพล เผ่าพงษ์", "exe": "3NSYH51TP7QN2NE9GC6IMWP0R", "server": "Season"}, {"no": 89, "fb": "Pariwat Aramashi", "exe": "JIOEDX1PGNXDEDQTMDICEBBYE", "server": "Season"}, {"no": 90, "fb": "Phutipong Peleewong", "exe": "NSO9JHYR0SJSM51LFHYFDYV9L", "server": "Season"}, {"no": 91, "fb": "Mylife Itme", "exe": "ZKTIS9HEYFIHZXUFSZMHHACZE", "server": "Season"}, {"no": 92, "fb": "Peeradej Utza", "exe": "1PFRWABAZP9D8DJBD9ZYHB9OY", "server": "Season"}, {"no": 93, "fb": "Zim Korn Kan", "exe": "S5JQBQU6BXO4BSH4WTRUASSIX", "server": "Season"}, {"no": 94, "fb": "Phuwanuttha Sriray", "exe": "BLPZI9Q1T4ROOPOLFHUT1I3Y0", "server": "Season"}, {"no": 95, "fb": "Sakda Wittayarojworng", "exe": "1J7YSSW2BAAWZF2OPU4URKCOI", "server": "Season"}, {"no": 96, "fb": "Supakrid Lerdkiatkul", "exe": "H2MFKHI9XR7ULIMFEWSFYDX60", "server": "Season"}, {"no": 97, "fb": "Tanu Tanukiku", "exe": "NRDLSQZJDKXVNFNHJDI29P1Z7", "server": "Season"}, {"no": 98, "fb": "Chai Kul", "exe": "MXHVL6TKLWTVC8AUXWHL2EO0L", "server": "Season"}, {"no": 99, "fb": "Kritsanapong Supagitroengrote", "exe": "CE24CU8RS762YQXCGLB4UJ6RR", "server": "Season"}, {"no": 100, "fb": "Kaen Novice", "exe": "X7JB4LYB7WMGTAVC8VXVCIRRO", "server": "Season"}, {"no": 101, "fb": "Konp Konp", "exe": "7E83ZXSFXXEOGSY3WHZRODPBP", "server": "Season"}, {"no": 102, "fb": "รักชาติ ยิ่งชีพ", "exe": "PZWWJPMTLXEEARPFDZEDX2UJ9", "server": "Season"}, {"no": 103, "fb": "Laval Hks", "exe": "SDPCKTIBB09VDETQLQUD3NGHA", "server": "Season"}, {"no": 104, "fb": "Indy Klaising", "exe": "KIR9CJNO4VR3VWGULCL44FUR0", "server": "Season"}, {"no": 105, "fb": "Judas Kiss", "exe": "Q9YJKNAL0FNUME1GERA4EK8WT", "server": "Season"}, {"no": 106, "fb": "Bank Zarotica", "exe": "OGTTK9JLMQIABI3UNHL0OEHTJ", "server": "Season"}, {"no": 107, "fb": "Nutpaphat Pornrangson", "exe": "Y0LTRTEF1ZFQT2J1X6H5NOCUT", "server": "Season"}, {"no": 108, "fb": "ᥗᥣᥳᥘᥣᥳᥚᥨᥢᥰ ᥚᥨᥝᥗᥤᥳ ᥚᥨᥝᥳ", "exe": "AWOUAGDNWUF1PUJ5PMH5FHV0S", "server": "Season"}, {"no": 109, "fb": "Pow Pow", "exe": "1KRDVP1UML56I6DNTSHUUNHIW", "server": "Season"}, {"no": 110, "fb": "Natanon Wisessri", "exe": "SY1GIXYV9JNM42PPO3RQOSUQN", "server": "Season"}, {"no": 111, "fb": "Cee Cee", "exe": "7HPVDZHX0MBRV5UCBVK5BJAJM", "server": "Season"}, {"no": 112, "fb": "Pornanun Khwanmueang", "exe": "H4TC4VJBWJOYH8EP0XFENLRVJ", "server": "Season"}, {"no": 113, "fb": "Pao Srikornvit Qiu", "exe": "JQWJRCCZWNL2II8S1QGF3HQAV", "server": "Season"}, {"no": 114, "fb": "Meta Kiatmolee", "exe": "TYU3T0U7XPVESZYOCQSYWK5UP", "server": "Season"}, {"no": 115, "fb": "Ray Pikas", "exe": "NGWSRAW1Y4XPAFTSJ8O4DMDO6", "server": "Season"}, {"no": 116, "fb": "น้าเช สิบล้อ", "exe": "CLWGCKZSCKWBI4PZJWEJXC1GQ", "server": "Season"}, {"no": 117, "fb": "Aoe Sane", "exe": "N5BKM2LSCQAKXTEGJXOPHQNB1", "server": "Season"}, {"no": 118, "fb": "Napapon Chansawek", "exe": "HJNPNI6IXQK72J0TWRQ5VL6P3", "server": "Season"}, {"no": 119, "fb": "Andriana Gardae", "exe": "SLLGMOYA1NKUOZ0IICSJAHR4W", "server": "Season"}, {"no": 120, "fb": "Zelnite Yea", "exe": "HSLCJJXWQH8ETWQE6ZWKAICPG", "server": "Season"}, {"no": 121, "fb": "Jesada J Ccl", "exe": "1GYWBEUGVMLJVIM5R47V68MRW", "server": "Season"}, {"no": 122, "fb": "Dookie Dook", "exe": "MVGHUPRUO91NFIXEQ0GA58TNX", "server": "Season"}, {"no": 123, "fb": "Dookie Dook", "exe": "UUAVT7NOHH9DMG8HYOB4SZYGE", "server": "Season"}]
+  };
 
-  let sortCol = -1, sortDir = 1;
+  const sortState = { memtest: {col:-1, dir:1}, guesschar: {col:-1, dir:1} };
+  const COL_KEYS = ['no','fb','exe'];
 
-  function renderTable(data) {
-    const tbody = document.getElementById('tableBody');
-    const noRes = document.getElementById('noResults');
+  function renderTable(tabId, data) {
+    const tbody = document.getElementById('tableBody-' + tabId);
+    const noRes = document.getElementById('noResults-' + tabId);
     if (data.length === 0) { tbody.innerHTML = ''; noRes.style.display = 'block'; return; }
     noRes.style.display = 'none';
     tbody.innerHTML = data.map(w => {
@@ -529,43 +575,49 @@
     }).join('');
   }
 
-  function updateStats(data) {
-    document.getElementById('stat-total').textContent = data.length;
-    document.getElementById('countChip').textContent  = data.length + ' ผู้โชคดี';
+  function updateStats(tabId, data) {
+    const leo = data.filter(w => w.server === 'Leonardo').length;
+    const sea = data.filter(w => w.server === 'Season').length;
+    document.getElementById('stat-total-' + tabId).textContent = data.length;
+    document.getElementById('stat-leo-' + tabId).textContent   = leo;
+    document.getElementById('stat-sea-' + tabId).textContent   = sea;
+    document.getElementById('countChip-' + tabId).textContent  = data.length + ' ผู้โชคดี';
   }
 
-  function getFiltered() {
-    const q = document.getElementById('searchInput').value.toLowerCase();
-    return winners.filter(w =>
-      (!q || w.fb.toLowerCase().includes(q) ||
-             w.exe.toLowerCase().includes(q))
+  function getFiltered(tabId) {
+    const q  = document.getElementById('searchInput-' + tabId).value.toLowerCase();
+    const sv = document.getElementById('serverFilter-' + tabId).value;
+    return DATASETS[tabId].filter(w =>
+      (!sv || w.server === sv) &&
+      (!q  || w.fb.toLowerCase().includes(q) ||
+              w.exe.toLowerCase().includes(q))
     );
   }
 
-  function filterTable() {
-    const data = getFiltered();
-    if (sortCol >= 0) {
-      const key = COL_KEYS[sortCol];
+  function filterTable(tabId) {
+    const data = getFiltered(tabId);
+    const st = sortState[tabId];
+    if (st.col >= 0) {
+      const key = COL_KEYS[st.col];
       data.sort((a,b) => {
         const av = typeof a[key]==='number' ? a[key] : a[key].toLowerCase();
         const bv = typeof b[key]==='number' ? b[key] : b[key].toLowerCase();
-        return av < bv ? -sortDir : av > bv ? sortDir : 0;
+        return av < bv ? -st.dir : av > bv ? st.dir : 0;
       });
     }
-    renderTable(data);
-    updateStats(data);
+    renderTable(tabId, data);
+    updateStats(tabId, data);
   }
 
-  function sortTable(col) {
-    if (sortCol === col) sortDir *= -1; else { sortCol = col; sortDir = 1; }
-    document.querySelectorAll('#winnerTable thead th').forEach((th, i) => {
+  function sortTable(tabId, col) {
+    const st = sortState[tabId];
+    if (st.col === col) st.dir *= -1; else { st.col = col; st.dir = 1; }
+    document.querySelectorAll('#winnerTable-' + tabId + ' thead th').forEach((th, i) => {
       th.classList.remove('sorted-asc','sorted-desc');
-      if (i === col) th.classList.add(sortDir===1 ? 'sorted-asc' : 'sorted-desc');
+      if (i === col) th.classList.add(st.dir===1 ? 'sorted-asc' : 'sorted-desc');
     });
-    filterTable();
+    filterTable(tabId);
   }
-
-  const COL_KEYS = ['no','fb','exe'];
 
   function switchTab(id, btn) {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -575,7 +627,8 @@
   }
 
   // init
-  filterTable();
+  filterTable('memtest');
+  filterTable('guesschar');
 </script>
 </body>
 </html>
